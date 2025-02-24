@@ -36,19 +36,22 @@ a.button11 {
     position: relative;
     z-index: 1;
     color: black;
-    font-size: 135%;
+    font-size: 100%;
     font-weight: 700;
     text-decoration: none;
     padding: .25em .5em;
-  }
-  a.button11::after {
-    content: "Купить";  /* здесь 6 букв */
+}
+
+a.button11::after {
+    content: "Купить";
+    /* здесь 6 букв */
     position: absolute;
     z-index: -1;
     top: -2px;
     bottom: -2px;
     left: -2px;
-    width: calc(100% + 6*(1em*90/135) - 2px*2*2);  /* где 6*(1em*90/135), где 6 - это 6 букв, 90 - это font-size after, а 135 - это font-size родителя */
+    width: calc(100% + 6*(1em*90/135) - 2px*2*2);
+    /* где 6*(1em*90/135), где 6 - это 6 букв, 90 - это font-size after, а 135 - это font-size родителя */
     text-align: right;
     color: #fff;
     font-size: 90%;
@@ -59,23 +62,25 @@ a.button11 {
     transform: skewX(-10deg);
     background: linear-gradient(#d4536d, #c61e40) no-repeat 100% 0;
     background-size: calc(6*(1em*90/135) + .5em) 100%;
-    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255,255,255,0);
+    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255, 255, 255, 0);
     transition: .3s;
-  }
-  a.button11:hover:after {
-    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255,255,255,.2);
-  }
-  a.button11:active:after {
+}
+
+a.button11:hover:after {
+    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255, 255, 255, .2);
+}
+
+a.button11:active:after {
     background-image: linear-gradient(#c61e40, #d4536d);
-  }
+}
 
 
 /*кнопака доставка*/
 .btn_delivery {
-	display: inline-block;	
+    display: inline-block;
     position: relative;
     z-index: 1;
-    font-size: 135%;
+    font-size: 100%;
     font-weight: 700;
     text-decoration: none;
     padding: .25em .5em;
@@ -83,40 +88,47 @@ a.button11 {
     transform: skewX(-10deg);
     background: linear-gradient(#d4536d, #c61e40) no-repeat 100% 0;
     background-size: calc(6*(1em*90/135) + .5em) 100%;
-    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255,255,255,0);
+    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255, 255, 255, 0);
     transition: .3s;
     color: #fff;
-	cursor: pointer;
-	user-select: none;
-	appearance: none;
-	touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;
 }
+
 .btn_delivery:focus-visible {
-	box-shadow: 0 0 0 2px #666;
+    box-shadow: 0 0 0 2px #666;
 }
 
 .btn_delivery:hover {
-    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255,255,255,.2);
+    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255, 255, 255, .2);
 }
+
 .btn_delivery:active {
     background-image: linear-gradient(#c61e40, #d4536d);
 }
 
-
 a.btn_delivery::after {
-    content: "цену";  /* здесь 6 букв */
+    content: "цену";
+    /* здесь 6 букв */
     position: absolute;
     z-index: -1;
     top: -2px;
     left: -2px;
-    width: calc(100% + 4*(1em*90/135) - 2px*2*2);  /* где 6*(1em*90/135), где 6 - это 6 букв, 90 - это font-size after, а 135 - это font-size родителя */
+    width: calc(100% + 4*(1em*90/135) - 2px*2*2);
+    /* где 6*(1em*90/135), где 6 - это 6 букв, 90 - это font-size after, а 135 - это font-size родителя */
     text-align: right;
     color: #000;
     padding: .25em .5em;
     border-radius: 5px;
     border: 2px solid #c61e40;
-    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255,255,255,0);
-  }
+    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255, 255, 255, 0);
+}
+
+a.btn_delivery:visited {
+    color: #fff;
+}
 
 /*Shop content css*/
 .shop_content {
@@ -167,7 +179,7 @@ a.btn_delivery::after {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: #F7E4E2;
+    /* background-color: #F7E4E2; */
     box-sizing: border-box;
     position: relative;
 }
@@ -204,8 +216,12 @@ a.btn_delivery::after {
 .button_bye {
     text-align: center;
     background: #F8F8F8;
-    margin-left: -58px;
-    padding: 16px 0px 16px 0px; 
+    /* margin-left: -58px; */
+    padding: 16px 0px 16px 0px;
+}
+
+.item_product_delivery {
+    width: 40px;
 }
 
 .item_btn {
@@ -226,7 +242,7 @@ a.btn_delivery::after {
 
 
 .item_img {
-    width: 100%;
+    width: 75%;
 }
 
 .item_title_content {
@@ -238,11 +254,24 @@ a.btn_delivery::after {
     box-sizing: border-box;
     background: #F8F8F8;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 16px;
     line-height: 22px;
     text-transform: uppercase;
     white-space: nowrap;
+}
 
+.item_title_content_delivery {
+    display: block;
+    width: 100%;
+    line-height: 16px;
+    box-sizing: border-box;
+    background: #F8F8F8;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .automated {
@@ -293,8 +322,8 @@ a.btn_delivery::after {
 .automated__column-img {
     max-width: 480px;
     padding: 26px 26px;
-    font-size: 20pt;
-    line-height: 22pt;
+    font-size: 18px;
+    line-height: 26px;
     box-shadow: 0px 18px 50px -15px rgb(25 42 89 / 20%);
     border-radius: 30px;
 }
@@ -310,24 +339,23 @@ a.btn_delivery::after {
 
 .automated__column>p {
     display: block;
-    font-weight: 300;
+    font-weight: 700;
     color: #5D5D5D;
-    padding: 12px 28px 18px 16px;
+    padding: 0px 28px 8px 16px;
     background: #F8F8F8;
-    font-size: 22px;
+    /* font-size: 22px; */
     line-height: 26px;
 }
 
 .shop_content_weight {
     display: block;
-    font-weight: 400;
+    font-weight: 700;
     /* width: 100%; */
-    font-size: 22pt;
+    font-size: 20pt;
     line-height: 19px;
     color: #F16D7F;
-    padding: 12px 28px 18px 16px;
+    padding: 0px 28px 18px 16px;
     background: #F8F8F8;
-
 }
 
 .shop_content_price {
@@ -443,6 +471,21 @@ a.shop_items_products_btn {
 
 /* @media (max-width: 1320px) and (min-width: 961px) { */
 @media (max-width: 1320px) {
+
+    /*кнопка красивая */
+    a.button11 {
+        font-size: 100%;
+    }
+
+    /*кнопака доставка*/
+    .btn_delivery {
+        font-size: 100%;
+    }
+
+    .automated__column {
+        text-align: center;
+    }
+
     .shop_content>ul {
         gap: 60px;
         position: relative;
@@ -464,6 +507,24 @@ a.shop_items_products_btn {
         margin-left: auto;
         margin-right: auto;
         padding: 26px 26px;
-        font-size: 12pt;
+        font-size: 12px;
+    }
+
+    .item_title_content {
+        padding-top: 12px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .automated__column>p {
+        font-size: 12px;
+        line-height: 16px;
+        padding: 5px 28px 5px 16px;
+    }
+
+    .shop_content_weight {
+        font-size: 12px;
+        line-height: 16px;
+        padding: 5px 28px 5px 16px;
     }
 }
