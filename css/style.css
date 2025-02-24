@@ -30,6 +30,75 @@ li {
     min-width: 343px;
 }
 
+/* Стили header сайта */
+.header_content {
+    max-width: 1140px;
+    padding-left: calc(50% - 570px);
+    padding-right: calc(50% - 570px);
+    flex-wrap: wrap;
+}
+
+.header_content>ul {
+    /* padding-bottom: 114px; */
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    position: relative;
+    /* overflow-x: hidden; */
+}
+
+.header_content>ul>li {
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_content_colum_phone {
+    display: flex;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.header_content_collum_phone_logo {
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/phone.svg);
+    background-size: cover;
+    margin-right: 15px;
+    margin-left: auto;
+    text-align: center;
+}
+
+
+.header_content_colum_phone>a {
+    max-width: 480px;
+    margin-right: auto;
+}
+
+.header_content_colum_img {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.header_content_logo {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header_content_logo_img {
+
+    max-height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*кнопка красивая */
 a.button11 {
@@ -471,6 +540,13 @@ a.shop_items_products_btn {
 
 /* @media (max-width: 1320px) and (min-width: 961px) { */
 @media (max-width: 1320px) {
+
+    .header_content>ul>li {
+        display: block;
+        gap: 100px;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     /*кнопка красивая */
     a.button11 {
