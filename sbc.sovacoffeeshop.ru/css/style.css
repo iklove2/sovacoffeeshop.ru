@@ -41,7 +41,7 @@ a.button11 {
     text-decoration: none;
     padding: .25em .5em;
   }
-  a.button11:after {
+  a.button11::after {
     content: "Купить";  /* здесь 6 букв */
     position: absolute;
     z-index: -1;
@@ -70,6 +70,53 @@ a.button11 {
   }
 
 
+/*кнопака доставка*/
+.btn_delivery {
+	display: inline-block;	
+    position: relative;
+    z-index: 1;
+    font-size: 135%;
+    font-weight: 700;
+    text-decoration: none;
+    padding: .25em .5em;
+    -webkit-transform: skewX(-10deg);
+    transform: skewX(-10deg);
+    background: linear-gradient(#d4536d, #c61e40) no-repeat 100% 0;
+    background-size: calc(6*(1em*90/135) + .5em) 100%;
+    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255,255,255,0);
+    transition: .3s;
+    color: #fff;
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	touch-action: manipulation;
+}
+.btn_delivery:focus-visible {
+	box-shadow: 0 0 0 2px #666;
+}
+
+.btn_delivery:hover {
+    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255,255,255,.2);
+}
+.btn_delivery:active {
+    background-image: linear-gradient(#c61e40, #d4536d);
+}
+
+
+a.btn_delivery::after {
+    content: "цену";  /* здесь 6 букв */
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4*(1em*90/135) - 2px*2*2);  /* где 6*(1em*90/135), где 6 - это 6 букв, 90 - это font-size after, а 135 - это font-size родителя */
+    text-align: right;
+    color: #000;
+    padding: .25em .5em;
+    border-radius: 5px;
+    border: 2px solid #c61e40;
+    box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255,255,255,0);
+  }
 
 /*Shop content css*/
 .shop_content {
@@ -157,7 +204,8 @@ a.button11 {
 .button_bye {
     text-align: center;
     background: #F8F8F8;
-    padding: 16px 0px 28px 18px; 
+    margin-left: -58px;
+    padding: 16px 0px 16px 0px; 
 }
 
 .item_btn {
@@ -204,12 +252,12 @@ a.button11 {
 }
 
 .shop_content>ul {
-    padding-bottom: 114px;
+    /* padding-bottom: 114px; */
     width: 100%;
     display: grid;
     gap: 10px;
     position: relative;
-    margin-bottom: 96px;
+    margin-bottom: 30px;
     /* overflow-x: hidden; */
 }
 
@@ -243,7 +291,7 @@ a.button11 {
 }
 
 .automated__column-img {
-    max-width: 600px;
+    max-width: 480px;
     padding: 26px 26px;
     font-size: 20pt;
     line-height: 22pt;
