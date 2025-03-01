@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <script src="../js/datasbc.js"></script>
     <header class="header_content">
         <ul>
             <li>
@@ -54,26 +55,33 @@
                             <div class="button_bye"><a class="btn_delivery" href="##">Узнать</a></div>
                         </div>
                         <div class="automated__column-img">
-                            <p><strong>Свойства:</strong> Начало</p>
-                            <p><strong>Способ приготовления:</strong>Способ приготовления: турка, мокка/гейзерная
-                                кофеварка, кофемашина/эспрессо</p>
-                            <p><strong>Обжарка:</strong> эспрессо</p>
-                            <p><strong>Метод обработки:</strong> натуральный</p>
-                            <p><strong>Дескрипторы вкуса:</strong> сухофрукты, шоколад, орехи</p>
-                            <p><strong>Страна производства:</strong> Бразилия</p>
-                            <p><strong>Артикул товара:</strong> (1320410)</p>
-                            <p>Пожалуй, это самая сладкая Бразилия, которую нам удалось найти!</p>
-                            <!-- <p>&nbsp;</p> -->
-                            <p>Сладость в Бразилии Кармо де Минас формируют три фактора: разновидность "желтый бурбон",
-                                маленький размер зерна и натуральная обработка.</p>
-                            <!-- <p>&nbsp;</p> -->
-                            <p>Наш опыт работы с кофе из Бразилии показывает, что самым сладким вкусом характеризуются
-                                маленькие ягоды.</p>
-                            <!-- <p>&nbsp;</p> -->
-                            <p>Маленькая ягода быстрее получает большее количество сахаров, которые образуются, когда
-                                ягода заизюмливается на ветке.</p>
-                            <!-- <p>&nbsp;</p> -->
-                            <p>Таким образом, три фактора, работая вместе, дают сладкий кофе из Бразилии.</p>
+                            <strong>Свойства:</strong> Начало
+                            <br>
+                            <strong>Способ приготовления:</strong>Способ приготовления: турка, мокка/гейзерная
+                            кофеварка, кофемашина/эспрессо
+                            <br>
+                            <strong>Обжарка:</strong> эспрессо
+                            <br>
+                            <strong>Метод обработки:</strong> натуральный
+                            <br>
+                            <strong>Дескрипторы вкуса:</strong> сухофрукты, шоколад, орехи
+                            <br>
+                            <strong>Страна производства:</strong> Бразилия
+                            <br>
+                            <strong>Артикул товара:</strong> (1320410)
+                            <br>
+                            Пожалуй, это самая сладкая Бразилия, которую нам удалось найти!
+                            <br>Сладость в Бразилии Кармо де Минас формируют три фактора: разновидность "желтый
+                            бурбон",
+                            маленький размер зерна и натуральная обработка.
+                            <br>Наш опыт работы с кофе из Бразилии показывает, что самым сладким вкусом
+                            характеризуются
+                            маленькие ягоды.
+                            <br>
+                            Маленькая ягода быстрее получает большее количество сахаров, которые образуются, когда
+                            ягода заизюмливается на ветке.
+                            <br>
+                            Таким образом, три фактора, работая вместе, дают сладкий кофе из Бразилии.
                         </div>
                     </li>
                 </ul>
@@ -87,11 +95,10 @@
                             <img src="img/11072023-10036-009-DD_3.webp">
                         </a>
                         <div class="another_product_title_back">
-                            <a class="another_product_title_content" href="#">Эспрессо</a>
-                            <p>
-                                Арабика и Робуста
+                            <div class="another_product_title_content">Эспрессо</div>
+                            <p>Арабика и Робуста
+                                <br>кофе - темный ночь, сладкий как клюбовь
                             </p>
-                            <p><span>кофе - темный ночь, сладкий как клюбовь</span></p>
                         </div>
                     </div>
                     <div class="another_product_desc">
@@ -116,8 +123,9 @@
                             <a class="another_product_title_content" href="#">Эспрессо</a>
                             <p>
                                 Та самая Бразилия в Эфиопии
+                                <br>
+                                лучший баланс и равновесие
                             </p>
-                            <p><span>лучший баланс и равновесие</span></p>
                         </div>
                     </div>
                     <div class="another_product_desc">
@@ -142,8 +150,8 @@
                             <a class="another_product_title_content" href="#">Эспрессо</a>
                             <p>
                                 Эфиопия по Классике
+                                <br>вишня, нектарин, мандарин
                             </p>
-                            <p><span>вишня, нектарин, мандарин</span></p>
                         </div>
                     </div>
                     <div class="another_product_desc">
@@ -162,6 +170,51 @@
             </ul>
         </section>
     </main>
+    <script>
+        const dataItems = JSON.parse(dataJson);
+        const divElContent = document.querySelector('.another_product');
+        const itemsEl = document.createElement('ul');
+        divElContent.appendChild(itemsEl);
+
+        dataItems.forEach(dataElem => {
+
+            const liEl = document.createElement('li');
+            liEl.classList.add('item_product');
+
+            const aImgEl = document.createElement('a');
+            aImgEl.classList.add('item_product_img');
+            aImgEl.href = "#";
+
+            const imgEl = document.createElement('img');
+            imgEl.classList.add('item_img');
+            imgEl.src = dataElem.img;
+            imgEl.alt = dataElem.title;
+
+            const aTitleEl = document.createElement('a');
+            aTitleEl.classList.add('item_title_content');
+            aTitleEl.href = "#";
+            aTitleEl.textContent = dataElem.title;
+
+            const pEl = document.createElement('p');
+            pEl.textContent = dataElem.text;
+
+            const spanEl = document.createElement('span');
+            spanEl.classList.add('shop_content_price');
+            spanEl.textContent = "$" + dataElem.price;
+
+            const buttonEl = document.createElement('button');
+            buttonEl.classList.add('item_btn');
+            buttonEl.type = 'button';
+
+            itemsEl.appendChild(liEl);
+            liEl.appendChild(aImgEl);
+            aImgEl.appendChild(imgEl);
+            liEl.appendChild(aTitleEl);
+            liEl.appendChild(pEl);
+            liEl.appendChild(spanEl);
+            liEl.appendChild(buttonEl);
+        });
+    </script>
 </body>
 
 </html>

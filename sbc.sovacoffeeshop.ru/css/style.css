@@ -101,7 +101,7 @@ li {
 }
 
 /*кнопка красивая */
-a.button11 {
+.button11 {
     position: relative;
     z-index: 1;
     color: black;
@@ -109,9 +109,10 @@ a.button11 {
     font-weight: 700;
     text-decoration: none;
     padding: .25em .5em;
+    border-style: none;
 }
 
-a.button11::after {
+.button11::after {
     content: "Купить";
     /* здесь 6 букв */
     position: absolute;
@@ -135,11 +136,11 @@ a.button11::after {
     transition: .3s;
 }
 
-a.button11:hover:after {
+.button11:hover:after {
     box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255, 255, 255, .2);
 }
 
-a.button11:active:after {
+.button11:active:after {
     background-image: linear-gradient(#f12a30, #d4536d);
 }
 
@@ -583,6 +584,8 @@ a.shop_items_products_btn {
 }
 
 .another_weight_price {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
     color: #d01000;
     z-index: 1;
     -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
@@ -592,15 +595,19 @@ a.shop_items_products_btn {
 }
 
 .another_content_weight {
-    padding: 8px;
+    padding-bottom: 8px;
     font-size: 15pt;
     font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .another_content_weight_price {
-    padding: 8px;
+    color: #000;
     font-size: 15pt;
     font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .another_product_img {
@@ -627,12 +634,20 @@ a.shop_items_products_btn {
     padding-top: 8px;
     display: block;
     width: 100%;
-    line-height: 16px;
     font-weight: bold;
     font-size: 16px;
     line-height: 22px;
     text-transform: uppercase;
     white-space: nowrap;
+}
+
+.another_product_title_text {
+    max-width: 428px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 22px;
+    font-size: 12px;
+    padding: 0px 26px 0px 26px;
 }
 
 .another_product_title_back>p {
